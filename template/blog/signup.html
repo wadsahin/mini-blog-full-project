@@ -1,0 +1,20 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="col-md-6 m-auto">
+        <h2 class="my-5">Signup Page</h2>
+        <form action="" method="post">
+          {% csrf_token %}
+          {% for fm in form %}
+          <div class="form-group">
+            {{fm.label_tag}} {{fm}} {{fm.errors|striptags}}
+          </div>
+          
+          {% endfor %}
+          
+          <input type="submit" value="Submit" class="btn btn-warning mt-3">
+          
+        </form>
+         
+    </div>
+{% endblock content %}
