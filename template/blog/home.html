@@ -3,12 +3,16 @@
 {% block content %}
     <div class="col-sm-10">
         <h2 class="my-5">Home Page</h2>
-        <div class="jumbotron jumbotron-fluid jumbo-design">
+        {% for post in posts %}
+          <div class="jumbotron jumbotron-fluid jumbo-design">
             <div class="container">
-              <h1 class="display-4">This Blog Title</h1>
-              <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita minus voluptates unde animi quo ipsam velit esse quam reprehenderit nisi harum maxime totam quisquam omnis iure, repellat perferendis deserunt sed facere quod commodi impedit. Est iusto, id, in, assumenda voluptatum vero a consequatur ipsum eos aperiam ratione rerum accusantium neque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae nesciunt esse dolores alias odit ad consequuntur placeat beatae aut aspernatur nihil aliquid officiis accusamus, labore ipsa. Laborum eum nihil facilis.</p>
+              <h1 class="display-4">{{post.title}}</h1>
+              <p class="lead">{{post.desc}}</p>
             </div>
           </div>
+        {% endfor %}
+
+          
      
     </div>
 {% endblock content %}

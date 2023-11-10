@@ -6,9 +6,14 @@
         <form action="" method="post">
          {% csrf_token %}
          {% for fm in form %}
-          {{fm.label_tag}} {{fm}} {{fm.errors|striptags}} <br>
+          {{fm.label_tag}} {{fm}} <small class="text-danger">{{fm.errors|striptags}}</small> <br>
          {% endfor %}
          <input type="submit" class="btn btn-primary " value="Login">
+         {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+             <p class="alert alert-warning my-3">{{error}}</p>
+            {% endfor %}
+          {% endif %}
         </form>
          
     </div>
